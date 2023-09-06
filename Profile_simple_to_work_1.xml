@@ -143,31 +143,31 @@
                         </integer>
                     </column>
                     <column name="isCTLSSupported" caption="Поддерживается работа с бесконтактными картами">
-                        <comment>Флаг нужно установить, если на устройстве поддерживается работа с бесконтактными картами</comment>
+                        <comment>Установите флаг, если на устройстве поддерживается работа с бесконтактными картами</comment>
                         <bit>
                             <default>true</default>
                         </bit>
                     </column>
                     <column name="isQRReadSupported" caption="Поддерживается считывание QR-кода устройством (терминалом)">
-                        <comment>Флаг нужно установить, если на SOFTPOS-устройстве поддерживается считывание данных QR-кода встроенным оборудованием (не связано с функционалом платежей по QR: СБП, Alipay)</comment>
+                        <comment>Установите флаг, если на SOFTPOS-устройстве поддерживается считывание данных QR-кода встроенным оборудованием (не связано с функционалом платежей по QR: СБП, Alipay)</comment>
                         <bit>
                             <default>false</default>
                         </bit>
                     </column>
                     <column name="isDeleteReversal" caption="Поддерживается удаление невыгруженных автоотмен">
-                        <comment>Флаг нужно установить, если необходимо чтобы после операции "Сверка" автоотмены удалялись из истории транзакций</comment>
+                        <comment>Установите флаг, если необходимо чтобы после операции "Сверка" автоотмены удалялись из истории транзакций</comment>
                         <bit>
                             <default>false</default>
                         </bit>
                     </column>
                     <column name="autoSettlementReceipt" caption="Печать чека автоматической сверки">
-                        <comment>Флаг нужно установить, если для инициированной по расписанию сверки нужен чек</comment>
+                        <comment>Установите флаг, если нужен чек для инициированной по расписанию сверки</comment>
                         <bit>
                             <default>false</default>
                         </bit>
                     </column>
                     <column name="voidConfirmation" caption="Подтверждение данных отмены">
-                        <comment>Флаг нужно установить, если для операции "Отмена" необходимо отобразить диалог подтверждения данных отменяемой транзакции</comment>
+                        <comment>Установите флаг, если для операции "Отмена" нужно отобразить диалог подтверждения данных отменяемой транзакции</comment>
                         <bit>
                             <default>true</default>
                         </bit>
@@ -183,7 +183,7 @@
                         </integer>
                     </column>
                     <column name="AmountDecimalSeparator" caption="Настройки десятичного разделителя суммы (опционально)">
-                        <comment>Можно настроить десятичный разделитель суммы 4-мя способами: "100,00", "100'00", "100 00", "100.00"</comment>
+                        <comment>При желании можно настроить десятичный разделитель суммы 4-мя способами: "100,00", "100'00", "100 00", "100.00"</comment>
                         <integer>
                             <enum>
                                 <!--<value value="0" label="Печать суммы без разделителя (10000)"/>-->
@@ -196,7 +196,7 @@
                         </integer>
                     </column>
                     <column name="AmountGroupSeparator" caption="Настройки разделителя групп разрядов суммы (опционально)">
-                        <comment>Можно настроить разделитель групп разрядов суммы 5-ю способами: "10000", 10,000", "10'000", "10 000", "10.000"</comment>
+                        <comment>При желании можно настроить разделитель групп разрядов суммы 5-ю способами: "10000", 10,000", "10'000", "10 000", "10.000"</comment>
                         <integer>
                             <enum>
                                 <value value="0" label="Без разделителя (10000)"/>
@@ -209,7 +209,7 @@
                         </integer>
                     </column>
                     <column name="BonusProfileTable" caption="Бонусный профиль">
-                        <comment>Множество карт, для которых поддерживается бонусная программа "Мультибонус" или "Бонус Плюс"</comment>
+                        <comment>Платежные карты, для которых поддерживается бонусная программа "Мультибонус" или "Бонус Плюс". Уточните информацию у технических специалистов</comment>
                         <link table="BonusProfile">
                         </link>
                     </column>
@@ -219,7 +219,7 @@
                         </link>
                     </column>
                     <column name="isUFI" caption="Поддержка функционала User Friendly Interface">
-                        <comment>Функционал предназначен для компании МультиКарта. За подробностями можно обратиться к сотрудникам технической поддержки</comment>
+                        <comment>Параметр предназначен для компании МультиКарта. За подробностями обратитесь к сотрудникам технической поддержки</comment>
                         <bit>
                             <default>false</default>
                         </bit>
@@ -227,13 +227,13 @@
                 </group>
                 <group caption="Настройки обновления приложения">
                         <column name="SW_AutoUpdate" caption="Автоматическое обновление терминального ПО">
-                            <comment>Флаг нужно установить, если необходимо автоматически обновить ПО до самой последней версии в выбранном контуре. При установленном флаге и подключенном устройстве к сети Интернет новая версия ПО будет устанавливаться на устройство</comment>
+                            <comment>Установите флаг, если необходимо автоматически обновить ПО до самой последней версии в выбранном контуре. При установленном флаге и подключенном устройстве к сети Интернет новая версия ПО установится на устройство</comment>
                             <bit>
                             	<default>true</default>
                         	</bit>
                         </column>
                          <column name="Maturity" caption="Рабочий контур">
-                            <comment>Рабочий контур устройства. На устройстве ПО автоматически обновится до самой последней версии в выбранном контуре</comment>
+                            <comment>Рабочий контур устройства. При выборе одного из четырех контуров, на устройстве автоматически обновится ПО до самой последней версии, добавленной в выбранный контур</comment>
                             <integer>
                                 <enum>
                                     <value value="0" label="Промышленная эксплуатация"/>
@@ -245,7 +245,7 @@
                             </integer>
                         </column>
                         <column name="SW_Update" caption="Загрузить выбранное терминальное ПО">
-                            <comment>Если установлено, то в терминал будет выполнена загрузка ПО</comment>
+                            <comment>Todo Если установлено, то в терминал будет выполнена загрузка ПО</comment>
                             <condition>!{SW_AutoUpdate}</condition>
                             <bit>
                             	<default>false</default>
@@ -259,7 +259,7 @@
                             </link>
                         </column>
                         <column name="SW_Update_Schedule" caption="Период обновления ПО">
-                            <comment>Настройки начала и конца периода обновления ПО</comment>
+                            <comment>Можно настроить период обновления ПО. Поле ссылается на справочник "Расписание обновлений"</comment>
                             <link table="SW_Update_Schedule">
                             </link>
                         </column>
@@ -303,7 +303,7 @@
                         </bit>
                     </column>-->
                     <column name="TimeZoneEnum" caption="Часовой пояс UTC">
-                        <comment>Можно выбрать часовой пояс, в котором будет находится устройство</comment>
+                        <comment>Выберите актуальный часовой пояс, в котором будет находится устройство</comment>
                         <integer>
                             <!--В качестве value используется CRC32 от ZoneId.GetId().getBytes()-->
                             <enum searchable="true">
@@ -913,135 +913,213 @@
                 <!-- Данные из полей помеченных комментарием с номером тэга пакуются в файл MAIN.TLV с соответствующим номером тэга-->
                 <group caption="EMV настройки терминала">
                     <column name="EMVProfile" caption="EMV профиль">
-                        <comment></comment>
+                        <comment>Поле ссылается на справочник "EMV профили"</comment>
                         <link table="EMVProfile">
                         </link>
                     </column>
                     <!-- packForTerminal="true" file="MAIN.TLV" tag="9F0D" -->
                     <column name="TACDef" caption="TAC default">
-                        <comment>Битовая маска, которая определяет условия отклонения транзакции при невозможности установки связи с хостом</comment>
+                        <comment>Битовая маска, которая определяет условия отклонения транзакции при отстутствии установки связи с хостом</comment>
                         <bitmap bytes="5">
                             <byte n="4" label="Байт 1">
                                 <bit n="7">bit 8 - Offline data authentication was not performed</bit>
+                                <comment>бит8 - В автономном режиме не выполнена проверка подлинности данных</comment>
                                 <bit n="6">bit 7 - SDA failed</bit>
+                                <comment>бит 7 - Сбой SDA</comment>
                                 <bit n="5">bit 6 - ICC data missing</bit>
+                                <comment>бит 6 - Отсутствуют данные ICC</comment>
                                 <bit n="4">bit 5 - Card appears on terminal exception file</bit>
+                                <comment>бит 5 - Карта появляется в файле исключений терминала</comment>
                                 <bit n="3">bit 4 - DDA failed</bit>
+                                <comment>бит 4 - Сбой DDA</comment>
                                 <bit n="2">bit 3 - CDA failed</bit>
+                                <comment>бит 3 - Сбой CDA</comment>
                             </byte>
                             <byte n="3" label="Байт 2">
                                 <bit n="7">bit 8 - ICC and terminal have different application versions</bit>
+                                <comment>бит 8 - ICC и терминал имеют разные версии приложений</comment>
                                 <bit n="6">bit 7 - Expired application</bit>
+                                <comment>бит 7 - Заявка с истекшим сроком действия</comment>
                                 <bit n="5">bit 6 - Application is not yet effective</bit>
+                                <comment>бит 6 - Заявка еще не вступила в силу</comment>
                                 <bit n="4">bit 5 - Requested service not allowed for card product</bit>
+                                <comment>бит 5 - Запрошенная услуга не разрешена для карточного продукта</comment>
                                 <bit n="3">bit 4 - New card</bit>
+                                <comment>бит 4 - Новая карта</comment>
                             </byte>
                             <byte n="2" label="Байт 3">
                                 <bit n="7">bit 8 - Cardholder verification was not successful</bit>
+                                <comment>бит 8 - Неуспешная проверка владельца карты</comment>
                                 <bit n="6">bit 7 - Unrecognised CVM</bit>
+                                <comment>бит 7 - Нераспознанный CVM</comment>
                                 <bit n="5">bit 6 - PIN Try Limit exceeded</bit>
+                                <comment>бит 6 - Превышен лимит попыток ввода PIN-кода</comment>
                                 <bit n="4">bit 5 - PIN entry required and PIN pad not present or not working</bit>
+                                <comment>бит 5 - Требуется ввод PIN-кода, а PIN-код отсутствует или не работает</comment>
                                 <bit n="3">bit 4 - PIN entry required, PIN pad present, but PIN was not entered</bit>
+                                <comment>бит 4 - Требуется ввод PIN-кода, PIN-код присутствует, но не введен</comment>
                                 <bit n="2">bit 3 - Online PIN entered</bit>
+                                <comment>бит 3 - Введенный онлайн PIN-код</comment>
                             </byte>
                             <byte n="1" label="Байт 4">
                                 <bit n="7">bit 8 - Transaction exceeds floor limit</bit>
+                                <comment>бит 8 - Транзакция превышает минимальный лимит</comment>
                                 <bit n="6">bit 7 - Lower consecutive offline limit exceeded</bit>
+                                <comment>бит 7 - Превышен нижний офлайн-лимит автономного режима</comment>
                                 <bit n="5">bit 6 - Upper consecutive offline limit exceeded</bit>
+                                <comment>бит 6 - Превышен верхний офлайн-лимит автономного режима</comment>
                                 <bit n="4">bit 5 - Transaction selected randomly for online processing</bit>
+                                <comment>бит 5 - Для онлайн-обработки транзакция выбирается случайным образом</comment>
                                 <bit n="3">bit 4 - Merchant forced transaction online</bit>
+                                <comment>бит 4 - Продавец провел онлайн-транзакцию</comment>
                             </byte>
                             <byte n="0" label="Байт 5">
                                 <bit n="7">bit 8 - Default TDOL used</bit>
+                                <comment>бит 8 - Используемый TDOL по умолчанию</comment>
                                 <bit n="6">bit 7 - Issuer authentication failed</bit>
+                                <comment>бит 7 - Ошибка проверки подлинности эмитента</comment>
                                 <bit n="5">bit 6 - Script processing failed before final GENERATE AC</bit>
+                                <comment>бит 6 - Сбой обработки скрипта перед окончательной генерацией криптограммы приложения</comment>
                                 <bit n="4">bit 5 - Script processing failed after final GENERATE AC</bit>
+                                <comment>бит 5 - Сбой обработки скрипта после окончательной генерации криптограммы приложения</comment>
                             </byte>
                             <default>0000000000000000000000000000000000000000</default>
                         </bitmap>
                     </column>
                     <!-- packForTerminal="true" file="MAIN.TLV" tag="9F0E" -->
                     <column name="TACDec" caption="TAC decline">
-                        <comment>Битовая маска, которая определяет условия отклонения транзакции до отправки на хост</comment>
+                        <comment>Битовая маска, которая до отправки на хост определяет условия отклонения транзакции</comment>
                         <bitmap bytes="5">
                             <byte n="4" label="Байт 1">
                                 <bit n="7">bit 8 - Offline data authentication was not performed</bit>
+                                <comment>бит8 - В автономном режиме не выполнена проверка подлинности данных</comment>
                                 <bit n="6">bit 7 - SDA failed</bit>
+                                <comment>бит 7 - сбой SDA</comment>
                                 <bit n="5">bit 6 - ICC data missing</bit>
+                                <comment>бит 6 - Отсутствуют данные ICC</comment>
                                 <bit n="4">bit 5 - Card appears on terminal exception file</bit>
+                                <comment>бит 5 - Карта появляется в файле исключений терминала</comment>
                                 <bit n="3">bit 4 - DDA failed</bit>
+                                <comment>бит 4 - Сбой DDA</comment>
                                 <bit n="2">bit 3 - CDA failed</bit>
+                                <comment>бит 3 - Сбой CDA</comment>
                             </byte>
                             <byte n="3" label="Байт 2">
                                 <bit n="7">bit 8 - ICC and terminal have different application versions</bit>
+                                <comment>бит 8 - У ICC и терминала разные версии приложений</comment>
                                 <bit n="6">bit 7 - Expired application</bit>
+                                <comment>бит 7 - Заявка с истекшим сроком действия</comment>
                                 <bit n="5">bit 6 - Application is not yet effective</bit>
+                                <comment>бит 6 - Заявка еще не начала действовать</comment>
                                 <bit n="4">bit 5 - Requested service not allowed for card product</bit>
+                                <comment>бит 5 - Запрошенная услуга не разрешена для карточного продукта</comment>
                                 <bit n="3">bit 4 - New card</bit>
+                                <comment>бит 4 - Новая карта</comment>
                             </byte>
                             <byte n="2" label="Байт 3">
                                 <bit n="7">bit 8 - Cardholder verification was not successful</bit>
+                                <comment>бит 8 - Неуспешная проверка владельца карты</comment>
                                 <bit n="6">bit 7 - Unrecognised CVM</bit>
+                                <comment>бит 7 - Непризнанный CVM</comment>
                                 <bit n="5">bit 6 - PIN Try Limit exceeded</bit>
+                                <comment>бит 6 - Превышен лимит попыток ввода PIN-кода</comment>
                                 <bit n="4">bit 5 - PIN entry required and PIN pad not present or not working</bit>
+                                <comment>бит 5 - Требуется ввод PIN-кода, а PIN-код отсутствует или не работает</comment>
                                 <bit n="3">bit 4 - PIN entry required, PIN pad present, but PIN was not entered</bit>
+                                <comment>бит 4 - Требуется ввод PIN-кода, PIN-код присутствует, но не введен</comment>
                                 <bit n="2">bit 3 - Online PIN entered</bit>
+                                <comment>бит 3 - Введен онлайн PIN-код</comment>
                             </byte>
                             <byte n="1" label="Байт 4">
                                 <bit n="7">bit 8 - Transaction exceeds floor limit</bit>
+                                <comment>бит 8 - Транзакция превышает минимальный лимит</comment>
                                 <bit n="6">bit 7 - Lower consecutive offline limit exceeded</bit>
+                                <comment>бит 7 - Превышен нижний лимит автономного режима</comment>
                                 <bit n="5">bit 6 - Upper consecutive offline limit exceeded</bit>
+                                <comment>бит 6 - Превышен верхний лимит автономного режима</comment>
                                 <bit n="4">bit 5 - Transaction selected randomly for online processing</bit>
+                                <comment>бит 5 - Для онлайн-обработки транзакция выбирается случайным образом</comment>
                                 <bit n="3">bit 4 - Merchant forced transaction online</bit>
+                                <comment>бит 4 - Продавец провел онлайн-транзакцию</comment>
                             </byte>
                             <byte n="0" label="Байт 5">
                                 <bit n="7">bit 8 - Default TDOL used</bit>
+                                <comment>бит 8 - Используемый TDOL по умолчанию</comment>
                                 <bit n="6">bit 7 - Issuer authentication failed</bit>
+                                <comment>бит 7 - Ошибка проверки подлинности эмитента</comment>
                                 <bit n="5">bit 6 - Script processing failed before final GENERATE AC</bit>
+                                <comment>бит 6 - Сбой обработки скрипта перед окончательной генерацией криптограммы приложения</comment>
                                 <bit n="4">bit 5 - Script processing failed after final GENERATE AC</bit>
+                                <comment>бит 5 - Сбой обработки скрипта после окончательной генерации криптограммы приложения</comment>
                             </byte>
                             <default>0000000000000000000000000000000000000000</default>
                         </bitmap>
                     </column>
                     <!-- packForTerminal="true" file="MAIN.TLV" tag="9F0F" -->
                     <column name="TACOnl" caption="TAC online">
-                        <comment>Битовая маска, которая определяет условия, при которых транзакция будет проводиться в online-режиме</comment>
+                        <comment>Битовая маска, которая определяет условия, при которых транзакция будет проводиться в онлайн-режиме</comment>
                         <bitmap bytes="5">
                             <byte n="4" label="Байт 1">
                                 <bit n="7">bit 8 - Offline data authentication was not performed</bit>
+                                <comment>бит 8 - Не выполнена проверка подлинности данных в автономном режиме</comment>
                                 <bit n="6">bit 7 - SDA failed</bit>
+                                <comment>бит 7 - Сбой SDA</comment>
                                 <bit n="5">bit 6 - ICC data missing</bit>
+                                <comment>бит 6 - Отсутствуют данные ICC</comment>
                                 <bit n="4">bit 5 - Card appears on terminal exception file</bit>
+                                <comment>бит 5 - Карта появляется в файле исключений терминала</comment>
                                 <bit n="3">bit 4 - DDA failed</bit>
+                                <comment>бит 4 - Сбой DDA</comment>
                                 <bit n="2">bit 3 - CDA failed</bit>
+                                <comment>бит 3 - Сбой CDA</comment>
                             </byte>
                             <byte n="3" label="Байт 2">
                                 <bit n="7">bit 8 - ICC and terminal have different application versions</bit>
+                                <comment>бит 8 - ICC и терминал имеют разные версии приложений</comment>
                                 <bit n="6">bit 7 - Expired application</bit>
+                                <comment>бит 7 - Заявка с истекшим сроком действия</comment>
                                 <bit n="5">bit 6 - Application is not yet effective</bit>
+                                <comment>бит 6 - Заявка еще не вступила в силу</comment>
                                 <bit n="4">bit 5 - Requested service not allowed for card product</bit>
+                                <comment>бит 5 - Запрошенная услуга не разрешена для карточного продукта</comment>
                                 <bit n="3">bit 4 - New card</bit>
+                                <comment>бит 4 - Новая карта</comment>
                             </byte>
                             <byte n="2" label="Байт 3">
                                 <bit n="7">bit 8 - Cardholder verification was not successful</bit>
+                                <comment>бит 8 - Неуспешная проверка владельца карты</comment>
                                 <bit n="6">bit 7 - Unrecognised CVM</bit>
+                                <comment>бит 7 - Непризнанный CVM</comment>
                                 <bit n="5">bit 6 - PIN Try Limit exceeded</bit>
+                                <comment>бит 6 - Превышен лимит попыток ввода PIN-кода</comment>
                                 <bit n="4">bit 5 - PIN entry required and PIN pad not present or not working</bit>
+                                <comment>бит 5 - Требуется ввод PIN-кода, а PIN-код отсутствует или не работает</comment>
                                 <bit n="3">bit 4 - PIN entry required, PIN pad present, but PIN was not entered</bit>
+                                <comment>бит 4 - Требуется ввод PIN-кода, PIN-код присутствует, но не введен</comment>
                                 <bit n="2">bit 3 - Online PIN entered</bit>
+                                <comment>бит 3 - Введенный онлайн PIN-код</comment>
                             </byte>
                             <byte n="1" label="Байт 4">
                                 <bit n="7">bit 8 - Transaction exceeds floor limit</bit>
+                                <comment>бит 8 - Транзакция превышает минимальный лимит</comment>
                                 <bit n="6">bit 7 - Lower consecutive offline limit exceeded</bit>
+                                <comment>бит 7 - Превышен нижний лимит автономного режима</comment>
                                 <bit n="5">bit 6 - Upper consecutive offline limit exceeded</bit>
+                                <comment>бит 6 - Превышен верхний лимит автономного режима</comment>
                                 <bit n="4">bit 5 - Transaction selected randomly for online processing</bit>
+                                <comment>бит 5 - Для онлайн-обработки транзакция выбирается случайным образом</comment>
                                 <bit n="3">bit 4 - Merchant forced transaction online</bit>
+                                <comment>бит 4 - Продавец провел онлайн-транзакцию</comment>
                             </byte>
                             <byte n="0" label="Байт 5">
                                 <bit n="7">bit 8 - Default TDOL used</bit>
+                                <comment>бит 8 - Используемый TDOL по умолчанию</comment>
                                 <bit n="6">bit 7 - Issuer authentication failed</bit>
+                                <comment>бит 7 - Ошибка проверки подлинности эмитента</comment>
                                 <bit n="5">bit 6 - Script processing failed before final GENERATE AC</bit>
+                                <comment>бит 6 - Сбой обработки скрипта перед окончательной генерацией криптограммы приложения</comment>
                                 <bit n="4">bit 5 - Script processing failed after final GENERATE AC</bit>
+                                <comment>бит 5 - Сбой обработки скрипта после окончательной генерации криптограммы приложения</comment>
                             </byte>
                             <default>0000000000000000000000000000000000000000</default>
                         </bitmap>
@@ -1072,75 +1150,118 @@
                     </column>
                     <!-- packForTerminal="true" file="MAIN.TLV" tag="9F1A" -->
                     <column name="TerminalCtrCode" caption="Код страны терминала">
+                        <comment>Код страны, в которой находится терминал. Используется общероссийский классификатор стран мира (ОКСМ). Код для России - 0643</comment>
                         <hex bytes="2">
                             <default>0643</default>
                         </hex>
                     </column>
                     <!-- packForTerminal="true" file="MAIN.TLV" tag="9F33" -->
                     <column name="EmvTerminalCapabilities" caption="Terminal capabilities">
-                        <comment>Параметр определяет типы ввода данных, методы верификации держателя карты и настройки безопасности поддерживаемые терминалом (TAG 9F33)</comment>
+                        <comment>Параметр, котрый помогает определить типы ввода данных, методы верификации держателя карты и настройки безопасности, поддерживаемые терминалом (TAG 9F33)</comment>
                         <bitmap bytes="3">
                             <byte n="2" label="Байт 1: Card Data Input Capability">
                                 <bit n="7">bit 8 - Manual key entry</bit>
+                                <comment>бит 8 - Ручной ввод ключа</comment>
                                 <bit n="6">bit 7 - Magnetic stripe</bit>
+                                <comment>бит 7 - Магнитная полоса</comment>
                                 <bit n="5">bit 6 - IC with contacts</bit>
+                                <comment>бит 6 - IC с контактами</comment>
                             </byte>
+                            <comment>Байт 1: Возможность ввода данных карты</comment>
                             <byte n="1" label="Байт 2: CVM Capability">
                                 <bit n="7">bit 8 - Plaintext PIN for ICC verification</bit>
+                                <comment>бит 8 - Открытый текстовый PIN-код для проверки ICC</comment>
                                 <bit n="6">bit 7 - Enciphered PIN for online verification</bit>
+                                <comment>бит 7 - Зашифрованный PIN-код для онлайн-верификации</comment>
                                 <bit n="5">bit 6 - Signature (paper)</bit>
+                                <comment>бит 6 - Подпись (на бумаге)</comment>
                                 <bit n="4">bit 5 - Enciphered PIN for offline verification</bit>
+                                <comment>бит 5 - Зашифрованный PIN-код для офлайн-проверки</comment>
                                 <bit n="3">bit 4 - No CVM Required</bit>
+                                <comment>бит 4 - Не требуется CVM</comment>
                             </byte>
+                            <comment>Байт 2: Возможности CVM</comment>
                             <byte n="0" label="Байт 3: Security Capability">
                                 <bit n="7">bit 8 - SDA</bit>
+                                <comment>бит 8 - Статическая проверка подлинности данных</comment>
                                 <bit n="6">bit 7 - DDA</bit>
+                                <comment>бит 7 - Динамическая проверка подлинности данных</comment>
                                 <bit n="5">bit 6 - Card capture</bit>
+                                <comment>бит 6 - Захват карты</comment>
                                 <bit n="3">bit 4 - CDA</bit>
+                                <comment>бит 4 - Комбинированная динамическая аутентификация данных</comment>
                             </byte>
+                            <comment>Байт 3: Возможности безопасности</comment>
                             <default>111000000000000111100000</default>
                         </bitmap>
                     </column>
                     <!-- packForTerminal="true" file="MAIN.TLV" tag="9F40" -->
                     <column name="AddTerminalCap" caption="Additional Terminal Capabilities">
-                        <comment>Параметр определяет возможности ввода, вывода терминала (TAG 9F40)</comment>
+                        <comment>Параметр, который помогает определить возможности ввода, вывода терминала (TAG 9F40)</comment>
                         <bitmap bytes="5">
                             <byte n="4" label="Байт 1">
                                 <bit n="7">bit 8 - Cash</bit>
+                                <comment>бит 8 - Наличные средства</comment>
                                 <bit n="6">bit 7 - Goods</bit>
+                                <comment>бит 7 - Товары</comment>
                                 <bit n="5">bit 6 - Services</bit>
+                                <comment>бит 6 - Услуги</comment>
                                 <bit n="4">bit 5 - Cashback</bit>
+                                <comment>бит 5 - Возврат наличных</comment>
                                 <bit n="3">bit 4 - Inquiry</bit>
+                                <comment>бит 4 - Запрос</comment>
                                 <bit n="2">bit 3 - Transfer</bit>
+                                <comment>бит 3 - Перемещение</comment>
                                 <bit n="1">bit 2 - Payment</bit>
+                                <comment>бит 2 - Платеж</comment>
                                 <bit n="0">bit 1 - Administrative</bit>
+                                <comment>бит 1 - Административный</comment>
                             </byte>
                             <byte n="3" label="Байт 2">
                                 <bit n="7">bit 8 - Cash deposit</bit>
+                                <comment>бит 8 - Наличный депозит</comment>
                             </byte>
                             <byte n="2" label="Байт 3">
                                 <bit n="7">bit 8 - Numeric keys</bit>
+                                <comment>бит 8 - Цифровые кнопки</comment>
                                 <bit n="6">bit 7 - Alphabetic and special character keys</bit>
+                                <comment>бит 7 - Буквенные и специальные символьные кнопки</comment>
                                 <bit n="5">bit 6 - Command keys</bit>
+                                <comment>бит 6 - Кнопки управления</comment>
                                 <bit n="4">bit 5 - Function keys</bit>
+                                <comment>бит 5 - Функциональные кнопки</comment>
                             </byte>
                             <byte n="1" label="Байт 4">
                                 <bit n="7">bit 8 - Print, attendant</bit>
+                                <comment>бит 8 - Печать, обслуживающий</comment>
                                 <bit n="6">bit 7 - Print, cardholder</bit>
+                                <comment>бит 7 - Печать, держатель карты</comment>
                                 <bit n="5">bit 6 - Display, attendant</bit>
+                                <comment>бит 6 - Дисплей, обслуживающий</comment>
                                 <bit n="4">bit 5 - Display, cardholder</bit>
+                                <comment>бит 5 - Дисплей, держатель карты</comment>
                                 <bit n="1">bit 2 - Code table 10</bit>
+                                <comment>бит 2 - Кодовая таблица 10</comment>
                                 <bit n="0">bit 1 - Code table 9</bit>
+                                <comment>бит 1 - Кодовая таблица 9</comment>
                             </byte>
                             <byte n="0" label="Байт 5">
                                 <bit n="7">bit 8 - Code table 8</bit>
+                                <comment>бит 8 - Кодовая таблица 8</comment>
                                 <bit n="6">bit 7 - Code table 7</bit>
+                                <comment>бит 7 - Кодовая таблица 7</comment>
                                 <bit n="5">bit 6 - Code table 6</bit>
+                                <comment>бит 6 - Кодовая таблица 6</comment>
                                 <bit n="4">bit 5 - Code table 5</bit>
+                                <comment>бит 5 - Кодовая таблица 5</comment>
                                 <bit n="3">bit 4 - Code table 4</bit>
+                                <comment>бит 4 - Кодовая таблица 4</comment>
                                 <bit n="2">bit 3 - Code table 3</bit>
+                                <comment>бит 3 - Кодовая таблица 3</comment>
                                 <bit n="1">bit 2 - Code table 2</bit>
+                                <comment>бит 2 - Кодовая таблица 2</comment>
                                 <bit n="0">bit 1 - Code table 1</bit>
+                                <comment>бит 1 - Кодовая таблица 1</comment>
                             </byte>
                             <default>1101000000000000111100001010000000000000</default>
                         </bitmap>
@@ -1151,32 +1272,49 @@
                         <bitmap bytes="8">
                             <byte n="7" label="Contactless CVM">
                                 <bit n="6">Enciphered PIN verified online</bit>
+                                <comment>Зашифрованный PIN-код, подтвержденный онлайн</comment>
                                 <bit n="5">Signature (paper)</bit>
+                                <comment>Подпись (на бумаге)</comment>
                                 <bit n="3">No CVM required</bit>
+                                <comment>Не требуется CVM</comment>
                                 <bit n="2">CDCVM</bit>
+                                <comment>todo</comment>
                             </byte>
+                            <comment>Бесконтактный CVM</comment>
                             <byte n="6" label="Contact CVM">
                                 <bit n="7">CVM Limit exceeded</bit>
+                                <comment>Превышен лимит CVM</comment>
                                 <bit n="6">Enciphered PIN verified online</bit>
+                                <comment>Зашифрованный PIN-код, подтвержденный онлайн</comment>
                                 <bit n="5">Signature (paper)</bit>
+                                <comment>Подпись (на бумаге)</comment>
                                 <bit n="4">Enciphered PIN verification performed by ICC</bit>
+                                <comment>Проверка зашифрованного PIN-кода, выполняемая ICC</comment>
                                 <bit n="3">No CVM required</bit>
+                                <comment>Не требуется CVM</comment>
                                 <bit n="2">CDCVM</bit>
+                                <comment>todo</comment>
                                 <bit n="1">Plaintext PIN verification performed by ICC</bit>
+                                <comment>Проверка PIN-кода открытого текста, выполняемая ICC</comment>
                             </byte>
+                            <comment>Контактный CVM</comment>
                             <byte n="5" label="Magstripe/EMV Contactless">
                                 <bit n="7">Only EMV mode contactless transactions supported</bit>
+                                <comment>Поддерживаются только бесконтактные транзакции в режиме EMV</comment>
                                 <bit n="6">Only mag-stripe mode contactless transactions supported</bit>
+                                <comment>Поддерживаются только бесконтактные транзакции в режиме магнитной полосы</comment>
                             </byte>
+                            <comment>Магнитная полоса/Бесконтактный EMV</comment>
                             <default>0000000000000000000000000000000000000000000000000000000000000000</default>
                         </bitmap>
                     </column>
                     <column name="MerchNameAndLocation" caption="Merchant Name and Location">
+                        <comment>Укажите название и адрес торговца</comment>
                         <ascii required="false" min="1" max="252">
                             <mask>[A-Za-z \d]+</mask>
                         </ascii>
                     </column>
-                </group>
+                    </group>
                 <!--<group caption="Default Terminal Limits">
                     <column name="FloorLimit" caption="Офлайн лимит">
                         <comment>Транзакции на сумму выше заданного лимита должны проводиться online. Указывается в минимальных платежных единицах.</comment>
@@ -1193,49 +1331,56 @@
                 </group> -->
                 <group caption = "Конфигурация с несколькими торговцами">
                     <column name="AllMechSupported" caption="Поддержка меню &quot;ДЛЯ ВСЕХ ТОРГОВЦЕВ&quot; ">
+                        <comment>Меню "ДЛЯ ВСЕХ ТОРГОВЦЕВ" используется для сверки итогов всех торговцев, использующих один терминал (т. е. несколько Terminal ID на одном терминале). Если флаг установлен, то на терминале отображается меню «Для всех торговцев»</comment>
                         <bit>
                             <default>false</default>
                         </bit>
                     </column>
                     <column name="MasterPass" caption="Мастер пароль">
-                        <comment>Пароль, запрашиваемый при администрировании терминала. При значении по умолчанию - не запрашивается.</comment>
+                        <comment>Пароль будет запрашиваться при переходе в меню «ДЛЯ ВСЕХ ТОРГОВЦЕВ». Если поле оставить пустым, пароль не будет запрашиваться</comment>
                         <ascii min="1" max="12">
                         </ascii>
                     </column>
                 </group>
                 <group caption="Настройки ККМ">
                    <column name="isECRConfig" caption="Терминал в конфигурации с ККМ">
+                    <comment>Установите флаг, если нужно подключить терминал к контрольно-кассовой машине (ККМ)</comment>
                         <bit>
                             <default>false</default>
                         </bit>
                     </column>
                     <column name="isECRScreenConfig" caption="Отображать экран ожидания">
+                        <comment>Установите флаг, если необходимо чтобы терминалл отображал ожидание процесса</comment>
                         <bit>
                             <default>false</default>
                         </bit>
                     </column>
                     <column name="isPrintSlipOnPos" caption="Печатать чек на POS-терминале">
+                        <comment>Установите флаг, если необходимо чтобы после выполнения транзакций терминал распечатал чек</comment>
                         <bit>
                             <default>false</default>
                         </bit>
                     </column>
                     <column name="isTerminalTranWithECR" caption="Разрешен запуск транзакции с терминала" condition="{isECRConfig}=true">
+                        <comment>Установите флаг, если необходимо произвести транзакцию вручную: ввести сумму и номер карты. Если не нужен ручной ввод данных, то не устанавливайте флаг</comment>
                         <bit>
                             <default>false</default>
                         </bit>
                     </column>
                     <column name="ECRComms" caption="Настройки связи с ККМ">
+                        <comment>Заполните поле, если используете терминал вместе с ККМ. В поле можно выбрать справочник с уже добавленными настройками связи или создать новый справочник с уникальными настройками</comment>
                         <link table="ECR">
                         </link>
                     </column>
                     <column name="ASAPConfig" caption="Конфигурация ASAP">
+                        <comment>В поле можно выбрать справочник с уже добавленной конфигурацией или создать новый справочник</comment>
                     	<link table="ASAPConfig">
                     	</link>
                     </column>
                 </group>
                 <group caption="Настройки транспортного предхоста">
                     <column name="StopListExpTimeOut" caption="Срок действия стоп-листа (в часах)">
-                        <comment>Если какой-то из стоп листов не обновлялся дольше, чем количество часов в этом поле, он будет считаться просроченным</comment>
+                        <comment>Срок действия блокировки карты (например, при подозрительных транзакциях). Параметр указывается в часах. Если какой-то из стоп-листов не обновлялся дольше, чем количество часов в этом поле, он будет считаться просроченным</comment>
                         <integer required="false">
                             <default>72</default>
                         </integer>
@@ -1272,10 +1417,12 @@
                 </group>
                 <group caption="Настройки динамической конвертации валют">
                     <column name="DccCurrencies" caption="Поддерживаемые валюты для конвертации">
+                         <comment>Справочник коллекции валют можно выбрать из списка или создать вручную</comment>
                         <link table="DccCurrenciesCollection">
                         </link>
                     </column>
                     <column name="isConfirmationForNotSupportedDCC" caption="Отображать предупреждение о проведении транзакции в оригинальной валюте, если конвертация не доступна">
+                        <comment>Установите флаг, если необходимо чтобы на терминале отображалось предупреждение о проведении транзакции в оригинальной валюте, при условии, что конвертация не доступна</comment>
                         <bit>
                             <default>true</default>
                         </bit>
@@ -1308,14 +1455,17 @@
             </sync>
             <items>
                 <column name="Org_name" caption="Название организации">
+                    <comment>Укажите название организации</comment>
                     <ascii required="true" min="1" max="50">
                     </ascii>
                 </column>
                 <column name="INN" caption="ИНН">
+                    <comment>Укажите идентификационный номер налогоплательщика (ИНН)</comment>
                     <ascii min="1" max="12">
                     </ascii>
                 </column>
                 <column name="orgType" caption="Тип организации">
+                    <comment>Необязательное поле. Выберите тип организации</comment>
                     <integer required="true">
                         <enum>
                             <value value="1" label="Пункт выдачи наличных"/>
@@ -1328,7 +1478,7 @@
                 </column>
                 <!-- Возможно нужен enum с множественным выбором -->
                 <column name="SupportedTransaction" caption="Разрешенные транзакции">
-                    <comment>Список транзакций разрешенных для данной организации.</comment>
+                    <comment>Выберите одну или несколько транзакций, разрешенных для данной организации</comment>
                     <bitmap bytes="2">
                         <byte n="0" label="Поддерживаемые транзакции">
                             <bit n="7">ОПЛАТА</bit>
@@ -1354,22 +1504,27 @@
                     </bitmap>
                 </column>
                 <column name="Group" caption="Группа">
+                    <comment>Необязательное поле. Укажите название группы организации</comment>
                     <ascii min="1" max="100">
                     </ascii>
                 </column>
                 <column name="Counterparty" caption="Контрагент">
+                    <comment>todo</comment>
                     <link table="Counterparties">
                     </link>
                 </column>
                 <column name="TSCWorkingCondition" caption="Условия работы с ТСП">
+                    <comment>todo</comment>
                     <link table="TSCWorkingConditions">
                     </link>
                 </column>
                 <column name="AssignedEmployee" caption="Закрепленный сотрудник/Менеджер">
+                    <comment>todo</comment>
                     <link table="EQWAEmployee">
                     </link>
                 </column>
                 <column name="ResponsiblePerson" caption="Ответственное лицо/Руководитель">
+                    <comment>todo</comment>
                     <link table="EQWAEmployee">
                     </link>
                 </column>
@@ -1378,7 +1533,7 @@
 
         <table name="OrganizationPoint" caption="Организации" itemCaption="Организация" branched="false"
                tagged="true">
-            <comment>Список организаций, использующих определенный терминал.</comment>
+            <comment>Названия организаций, которые используют определенный терминал</comment>
             <rowName template="{0}">
                 <!--<local column="Org_name"/>-->
                 <link column="Org_name" by="OrganizationBase"/>
@@ -1397,15 +1552,17 @@
                          </hex>
                 </column>-->
                 <column name="MerchantCategoryCode" caption="Код категории продавца (MCC)">
+                    <comment>todo написоно, что это устаревший коммент</comment>
                     <link table="MerchantCategoryCodes">
                     </link>
                 </column>
-                <column name="OrganizationBase" caption="Данные организации" >
+                <column name="OrganizationBase" caption="Данные организации">
+                    <comment>Информация об организации. Выберите из списка или добавьте новую информацию. Поле ссылается на справочник "Данные организаций"</comment>
                     <link required = "true" table="OrganizationBase" searchable="true">
                     </link>
                 </column>
                 <column name="ForbiddenCancellation" caption="Запретить отмену транзакции">
-                    <comment>Список транзакций для которых операция отмена для данной организации будет запрещена.</comment>
+                    <comment>Выберите одну или несколько транзакций, для которых будет запрещена функция "Отмена" для данной организации</comment>
                     <bitmap bytes="2">
                         <byte n="1" label="Название транзакции">
                             <bit n="5">РАСЧЕТ</bit>
@@ -1420,11 +1577,12 @@
                 </column>
                 <group caption="Печать чеков">
                     <column name="ReceiptSettings" caption="Настройки печати чека">
+                        <comment>По желанию можно настроить уникальный шаблон чека. Поле ссылается на справочник "Настройки печати чека"</comment>
                         <link table="ReceiptSettings">
                         </link>
                     </column>
                     <column name="fullReportForSTL" caption="Печать детального отчета для сверки">
-                        <comment>Флаг устанавливается, если при проведении сверки всегда должен быть напечатан полный отчет.</comment>
+                        <comment>Установите флаг, если при проведении операции "Сверка" или "Сверка итогов" нужно, чтобы распечатался полный отчет</comment>
                         <bit>
                             <default>false</default>
                         </bit>
@@ -1441,26 +1599,32 @@
                         </link>
                     </column>-->
                     <column name="HeaderLine1" caption="Строка заголовка чека 1">
+                        <comment>Строки от 1 до 6 - это строки верхней части профиля. Можно указать информацию об организации, предоставляющей услуги. Например, юр. лицо, адрес, контактный номер телефона. Строка 1 имеет ограничение по колличеству вводимых символов</comment>
                         <ascii min="1" max="32">
                         </ascii>
                     </column>
                     <column name="HeaderLine2" caption="Строка заголовка чека 2">
+                        <comment>Строка 2 имеет ограничение по колличеству вводимых символов</comment>
                         <ascii min="1" max="32">
                         </ascii>
                     </column>
                     <column name="HeaderLine3" caption="Строка заголовка чека 3">
+                        <comment>Строка 3 имеет ограничение по колличеству вводимых символов</comment>
                         <ascii min="1" max="32">
                         </ascii>
                     </column>
                     <column name="HeaderLine4" caption="Строка заголовка чека 4">
+                        <comment>Строка 4 имеет ограничение по колличеству вводимых символов</comment>
                         <ascii min="1" max="32">
                         </ascii>
                     </column>
                     <column name="HeaderLine5" caption="Строка заголовка чека 5">
+                        <comment>Строка 5 имеет ограничение по колличеству вводимых символов</comment>
                         <ascii min="1" max="32">
                         </ascii>
                     </column>
                     <column name="HeaderLine6" caption="Строка заголовка чека 6">
+                        <comment>Строка 6 имеет ограничение по колличеству вводимых символов</comment>
                         <ascii min="1" max="32">
                         </ascii>
                     </column>
@@ -1468,7 +1632,7 @@
                 <group caption="Безопасность">
                 <!-- Возможно нужен enum с множественным выбором -->
                     <column name="PasswordSettings" caption="Настройки паролей">
-                        <comment>Действия требующие запроса пароля администратора</comment>
+                        <comment>Можно выбрать транзакию или несколько транзакций, для которых терминал будет запрашивать пароль администратора</comment>
                         <bitmap bytes="1">
                             <byte n="0" label="Действия требующие ввода пароля">
                                 <bit n="7">Печать отчетов</bit>
@@ -1481,24 +1645,25 @@
                         </bitmap>
                     </column>
                     <column name="AdminPass" caption="Пароль Администратора">
-                        <comment>Пароль, запрашиваемый при администрировании терминала. При значении по умолчанию - не запрашивается.</comment>
+                        <comment>Пароль, запрашиваемый при администрировании терминала. Если не ввести данные, то пароль не будет запрашиваться</comment>
                         <ascii min="1" max="12">
                         </ascii>
                     </column>
                     <column name="MerchantPass" caption="Пароль Торговца">
-                        <comment>Пароль, запрашиваемый при выборе Организации из списка. При значении по умолчанию - не запрашивается.</comment>
+                        <comment>Пароль, запрашиваемый при выборе организации из списка. Если не ввести данные, то пароль не будет запрашиваться</comment>
                         <ascii min="1" max="12">
                         </ascii>
                     </column>
                 </group>
                 <group caption="Чаевые">
                     <column name="AutoTips" caption="Чаевые по умолчанию(%)">
-                    <comment>Поддерживается не для всех клиентов</comment>
+                    <comment>Данная настройка не предназначена для большинства клиентов. За подробностями обратитесь к технической поддежке</comment>
                         <decimal digits="4" scale="2" min="0.00" max="99.99">
                             <default>0.00</default>
                         </decimal>
                     </column>
                     <column name="TipService" caption="Сервис">
+                        <comment>Название электронного сервиса оплаты чаевых, который подключен к организации</comment>
                         <integer>
                             <enum>
                                 <value value="1" label="НетМонет"/>
@@ -1508,18 +1673,19 @@
                 </group>
                 <group caption="Оплата частями / Рассрочка">
                     <column name="InstallmentsParts" caption="Количество платежей для оплаты частями">
-                    <comment>Максимальное значение количества платежей доступных для операции "Оплата частями"</comment>
+                    <comment>Можно указать максимальное значение количества платежей доступных для операции "Оплата частями"</comment>
                         <integer min="0" max="512">
                         </integer>
                     </column>
                     <column name="InstantInstalmentParts" caption="Количество платежей мгновенной рассрочки">
-                    <comment>Максимальное значение количества платежей доступных для операции "Мгновенная рассрочка"</comment>
+                    <comment>Можно указать максимальное значение количества платежей доступных для операции "Мгновенная рассрочка"</comment>
                         <integer min="0" max="512">
                         </integer>
                     </column>
                 </group>
                  <group caption="Система быстрых пратежей (СБП)">
                     <column name="SbpOnReadCardScreen" caption="Отображение QR для оплаты на экране чтения карты">
+                        <comment>Установите флаг, если необходимо чтобы на экране терминала отображался QR-код для оплаты</comment>
                         <bit>
                             <default>false</default>
                         </bit>
@@ -1527,17 +1693,17 @@
                 </group>
                 <group caption="Данные счета">
                     <column name="AccountName" caption="Название счета">
-                    <comment>Опциональные данные для клиентского функционала</comment>
+                    <comment>Это опциональные данные для клиентского функционала. Можно указать название счета организации</comment>
                         <ascii min="0" max="128">
                         </ascii>
                     </column>
                     <column name="AccountNumber" caption="Номер счета">
-                    <comment>Опциональные данные для клиентского функционала</comment>
+                    <comment>Это опциональные данные для клиентского функционала. Можно указать номер счета организации</comment>
                         <ascii min="0" max="128">
                         </ascii>
                     </column>
                     <column name="AccountToken" caption="Токен">
-                    <comment>Опциональные данные для клиентского функционала</comment>
+                    <comment>Это опциональные данные для клиентского функционала. todo</comment>
                         <clob/>
                     </column>
                 </group>
@@ -1546,7 +1712,6 @@
 
         <table name="HostSettings" caption="Настройки хоста" itemCaption="Хост" branched="false"
                tagged="true" event="ru.nadeks.aria.common.events.KdmEvent$DeviceHostSettingsChanged">
-            <comment>Список хостов с которыми работает каждая конкретная Организация. Настройки уникальные для каждой организации в рамках одного хоста.</comment>
             <rowName template="{0}/{1} ({2})">
                 <local column="TID"/>
                 <local column="MID"/>
@@ -1558,15 +1723,17 @@
             </tableLinks>
             <items>
                 <column name="HostConnection" caption="Название хостового соединения">
-                    <comment>Название настроек связи с финансовым хостом</comment>
+                    <comment>Выберите хост, с которыми работает конкретная организация</comment>
                     <link required="true" table="System_Hosts">
                     </link>
                 </column>
                 <column name="CounterpartyBank" caption="Контрагент">
+                    <comment>Контрагент - это сторона, заключающая договор в рамках гражданско-правовых отношений. Поле ссылается на справочник "Контрагенты"</comment>
                     <link table="Counterparties">
                     </link>
                 </column>
                 <column name="HostType" caption="Тип хоста">
+                    <comment>todo</comment>
                     <integer required="true">
                         <enum>
                             <value value="0" label="Default"/>
@@ -1583,35 +1750,37 @@
                     </integer>
                 </column>
                 <column name="HostTypeAlias" caption="Название типа хоста">
+                    <comment>При желании можно указать название типа хоста</comment>
                     <ascii min="1" max="128">
                     </ascii>
                 </column>
                 <column name="HostID" caption="ID хоста" unique="true">
+                    <comment>Введите идентификационный номер или имя хоста</comment>
                     <integer min="0" max="512">
                     </integer>
                 </column>
                 <column name="TID" caption="ID терминала">
-                    <comment>Значение передается в запросе на финансовых хост. Поле Terminal ID. Уникально для каждого терминала в рамках одного хоста.</comment>
+                    <comment>Введите идентификационный номер терминала. Значение передается в запросе на финансовый хост. Данное поле уникально для каждого терминала в рамках одного хоста</comment>
                     <ascii required="true" min="1" max="16">
                     </ascii>
                 </column>
                 <column name="MID" caption="ID торговца">
-                    <comment>Значение передается в запросе на финансовых хост. Поле Merchant ID.</comment>
+                    <comment>Идентификатор торговца. Значение передается в запросе на финансовый хост</comment>
                     <ascii required="true" min="1" max="15">
                     </ascii>
                 </column>
                 <column name="NII" caption="NII">
-                    <comment></comment>
+                    <comment>todo</comment>
                     <ascii min="3" max="3">
                     </ascii>
                 </column>
                 <column name="Settlement" caption="План сверки итогов">
-                    <comment>Частота и время запуска автоматической Сверки.</comment>
+                    <comment>План запуска транзакции "Сверка" на устройстве. Данная транзакция будет запускаться автоматически при выбранных значениях: день и время. Поле ссылается на справочник "Расписания"</comment>
                     <link table="Schedule">
                     </link>
                 </column>
                 <column name="ServiceSettings" caption="Настройка сервиса">
-                    <comment>*Необходимо уточнить информацию о включении этой настройки у сотрудников сопровождения ARIASOFT</comment>
+                    <comment>Чтобы включить эту настройку, уточните информацию у сотрудников технической поддержки</comment>
                     <link table="ServiceSettings">
                     </link>
                 </column>
@@ -1654,6 +1823,7 @@
                 </column>-->
                 <group caption = "Дополнительные настройки операций">
                     <column name="BalanceSettings" caption="Баланс">
+                        <comment>При желании можно выбрать один из вариантов отображения баланса карты клиента. Данный функционал не поддерживается для большинства клиентов. За подробностями обратитесь к технической поддержке</comment>
                         <integer required="true">
                             <enum>
                                 <value value="0" label="Печать баланса на чеке"/>
@@ -1665,7 +1835,7 @@
                         </integer>
                     </column>
                     <column name="AdditionalProcSettings" caption="Авторизация/Расчет/Возврат">
-                        <comment>Настройки запроса дополнительных данных во время проведения транзакций</comment>
+                        <comment>Настройки запроса дополнительных данных во время проведения транзакций todo</comment>
                         <bitmap bytes="2">
                             <byte n="1" label="Авторизация/Расчет">
                                 <bit n="7">Запрашивать номер чека Пре-Авторизации для транзакции Расчет</bit>
@@ -1729,7 +1899,7 @@
                     </ascii>
                 </column>
                <column name="HostProtocol" caption="Хостовой протокол">
-                    <comment>Протокол взаимодействия терминала с хостом.</comment>
+                    <comment>Протокол взаимодействия терминала с хостом</comment>
                     <integer>
                         <enum>
                             <value value="1" label="SmartVista"/>
@@ -1863,46 +2033,50 @@
 
         <table name="ReceiptSettings" caption="Настройки печати чека" itemCaption="Настройки печати чека" root="true"
                branched="false" tagged="true">
-            <comment>Настройки печати чека транзакции.</comment>
             <rowName template="{0}">
                 <local column="ReceiptTableName"/>
             </rowName>
             <items>
                 <column name="ReceiptTableName" caption="Название таблицы" unique="true">
+                    <comment>Введите название таблицы шаблона чека todo</comment>
                     <ascii required="true" max="255">
                     </ascii>
                 </column>
                 <column name="HeaderLogo" caption="Файл изображения в заголовке">
+                    <comment>При желании можно указать файл изображения. Изображение будет отображаться в заголовке чека. Поле ссылается на справочник "Изображения"</comment>
                     <link table="IdlePicture">
                     </link>
                 </column>
                 <column name="Header" caption="Текст в заголовке чека">
+                    <comment>todo</comment>
                     <!-- Некий пока неопределенный формат текста, печатаемого в заголовке чека-->
                     <clob/>
                 </column>
                 <column name="FooterLogo" caption="Файл изображения в футере чека">
+                    <comment>При желании можно указать файл изображения. Изображение будет отображаться в нижней части чека. Поле ссылается на справочник "Изображения"</comment>
                     <link table="IdlePicture">
                     </link>
                 </column>
                 <column name="Footer" caption="Текст в футере чека">
+                    <comment>todo</comment>
                     <!-- Некий пока неопределенный формат текста, печатаемого в конечной части чека-->
                     <clob/>
                 </column>
                 <group caption="Настройки печати первого чека">
                     <column name="PrintDeclined" caption="Печатать чек для отклоненных транзакций">
-                        <comment>Флаг, определяющий необходимость печати чека для отклоненной транзакции.</comment>
+                        <comment>Установите флаг, если необходимо чтобы распечатался чек для отклоненной транзакции</comment>
                         <bit>
                             <default>true</default>
                         </bit>
                     </column>
                     <column name="CountFirstReceipt" caption="Количество чеков">
-                        <comment>Количество чеков клиента необходимых для печати (от 1го до 3х)</comment>
+                        <comment>Укажите количество чеков, необходимых для печати. Допустимые значения от 1 до 3</comment>
                         <integer required="true" min="1" max="3">
                             <default>1</default>
                         </integer>
                     </column>
                     <column name="FirstReceiptPrintConfirmation" caption="Печать первого чека по запросу">
-                        <comment>Флаг, определяющий необходимость дополнительного диалога с подтверждением печати первого чека.</comment>
+                        <comment>Установите флаг, если необходимо чтобы на экране терминала, до печати первого чека, отображался диалог с подтверждением печати первого чека</comment>
                         <bit>
                             <default>false</default>
                         </bit>
@@ -1910,25 +2084,25 @@
                 </group>
                 <group caption="Настройки печати второго чека">
                     <column name="PrintSecond" caption="Печатать второй чек">
-                        <comment>Флаг, определяющий необходимость печати второго чека.</comment>
+                        <comment>Установите флаг, если необходимо чтобы терминал распечатал копию первого чека</comment>
                         <bit>
                             <default>true</default>
                         </bit>
                     </column>
                     <column name="SecondReceiptPrintConfirmation" caption="Печать второго чека по запросу">
-                        <comment>Флаг, определяющий необходимость дополнительного диалога с подтверждением печати второго чека. Если флаг не установлен второй чек будет печататься всегда.</comment>
+                        <comment>Установите флаг, если необходимо чтобы на экране терминала, до печати второго чека, отображался диалог с подтверждением печати второго чека. Если вы не установили флаг, второй чек будет автоматически распечатываться каждый раз после печати первого чека</comment>
                         <bit>
                             <default>true</default>
                         </bit>
                     </column>
                     <column name="CountSecondReceipt" caption="Количество чеков">
-                        <comment>Количество чеков клиента необходимых для печати (от 1го до 3х)</comment>
+                        <comment>Укажите количество чеков, необходимых для печати. Допустимые значения от 1 до 3</comment>
                         <integer required="true" min="1" max="3">
                             <default>1</default>
                         </integer>
                     </column>
                     <column name="SecondReceiptTimeout" caption="Таймаут печати второго чека">
-                        <comment>Таймаут в секундах, по истечении которого, будет напечатан второй чек.</comment>
+                        <comment>Укажите время в секундах, по истечении которого, распечатается второй чек</comment>
                         <integer min="0" max="999">
                             <default>30</default>
                         </integer>
@@ -1936,7 +2110,7 @@
                 </group>
                 <group caption="Настройки печати чека сверки">
                     <column name="ReconcileReceiptPrintConfirmation" caption="Печать чека сверки по запросу">
-                        <comment>Флаг, определяющий необходимость дополнительного диалога с подтверждением печати чека сверки.</comment>
+                        <comment>Установите флаг, если необходимо чтобы на экране терминала, до печати чека операции "Сверка" или "Сверка итогов", отображался диалог с подтверждением печати чека. Если вы не установили флаг, чек операции "Сверка" или "Сверка итогов" не будет автоматически распечатываться после печати чека(-ов)</comment>
                         <bit>
                             <default>false</default>
                         </bit>
@@ -1947,29 +2121,31 @@
 
         <table name="PrintCardDataSettings" caption="Печать данных карты" itemCaption="Печать данных карты" root="true"
                branched="false" tagged="true">
-            <comment>Настройки печати на чеке данных считанных с карты.</comment>
+            <comment>Настройки печати на чеке данных считанных с карты todo</comment>
             <rowName template="{0}">
                 <local column="TableName"/>
             </rowName>
             <items>
                 <column name="TableName" caption="Название таблицы" unique="true">
+                    <comment>Введите название таблицы шаблона... todo</comment>
                     <ascii required="true" min="1" max="50">
                     </ascii>
                 </column>
                 <group caption="Настройки маскирования PAN">
                     <column name="MaskSymbol" caption="Символ маскирования PAN">
+                        <comment>Укажите символ, который будет появляться на терминале вместо номера банковской карты клиента</comment>
                         <ascii max="1">
                             <default>*</default>
                         </ascii>
                     </column>
                     <column name="LeftNotMasked" caption="Не маскировать слева">
-                    <comment>Количество символов номера карты, которые будут не замаскированны слева. (не больше 6)</comment>
+                    <comment>Укажите количество символов номера карты, которые не будут замаскированы с левой стороны. Допустимое количество символов от 1 до 6</comment>
                         <integer required="true" min="0" max="6">
                             <default>0</default>
                         </integer>
                     </column>
                     <column name="RightNotMasked" caption="Не маскировать справа">
-                    <comment>Количество символов номера карты, которые будут не замаскированны справа. (не больше 4)</comment>
+                    <comment>Укажите количество символов номера карты, которые не будут замаскированы с правой стороны. Допустимое количество символов от 1 до 4 todo</comment>
                         <integer required="true" min="0" max="4">
                             <default>4</default>
                         </integer>
@@ -1977,13 +2153,13 @@
                 </group>
                 <group caption="Настройки печати данных карты">
                     <column name="PrintExpDate" caption="Печать срока действия карты">
-                        <comment>Флаг, определяющий необходимость печати срока действия карты на чеке.</comment>
+                        <comment>Установите флаг, если необходимо чтобы срок действия карты отображался на чеке</comment>
                         <bit>
                             <default>true</default>
                         </bit>
                     </column>
                     <column name="PrintCardholder" caption="Печать имени держателя карты">
-                        <comment>Флаг, определяющий необходимость печати имени держателя карты на чеке.</comment>
+                        <comment>Установите флаг, если необходимо чтобы имя держателя карты отображалось на чеке</comment>
                         <bit>
                             <default>true</default>
                         </bit>
@@ -2004,10 +2180,12 @@
             </tableLinks>
             <items>
                 <column name="ProductName" caption="Название карточного продукта" unique="true">
+                    <comment>Укажите название карточного продукта</comment>
                     <ascii required="true" min="1" max="50">
                     </ascii>
                 </column>
                 <column name="PaymentSys" caption="Платежная система/Тип карты">
+                    <comment>Выберите платежную систему для карточного продукта</comment>
                     <integer required="true">
                         <enum>
                             <value value="-1" label="Карта кассира"/>
@@ -2025,7 +2203,7 @@
                 </column>
                 <!-- Возможно нужен enum с множественным выбором -->
                 <column name="PinReqTran" caption="Транзакции требующие PIN (магнитная карта)">
-                    <comment>Transaction PIN Settings</comment>
+                    <comment>Transaction PIN Settings todo</comment>
                     <bitmap bytes="1">
                         <byte n="0" label="Транзакции с PIN">
                             <bit n="7">ОПЛАТА</bit>
@@ -2041,7 +2219,7 @@
                     </bitmap>
                 </column>
                 <column name="PinReqTranManual" caption="Транзакции требующие PIN (ручной ввод)">
-                    <comment>Transaction PIN Settings</comment>
+                    <comment>Transaction PIN Settings todo</comment>
                     <bitmap bytes="1">
                         <byte n="0" label="Транзакции с PIN">
                             <bit n="7">ОПЛАТА</bit>
@@ -2057,7 +2235,7 @@
                     </bitmap>
                 </column>
                 <column name="PinReqTranQr" caption="Транзакции требующие PIN (QR)">
-                    <comment>Transaction PIN Settings</comment>
+                    <comment>Transaction PIN Settings todo</comment>
                     <bitmap bytes="1">
                         <byte n="0" label="Транзакции с PIN">
                             <bit n="7">ОПЛАТА</bit>
@@ -2074,15 +2252,20 @@
                 </column>
                 <!-- Возможно нужен enum с множественным выбором -->
                 <column name="IssuerRules" caption="Настройки Эмитента">
+                    <comment>todo</comment>
                     <bitmap bytes="3">
                         <byte n="0" label="Типы ввода данных карты">
                             <bit n="7">Разрешен ручной ввод</bit>
+                            <comment>Установите флаг, если необходим ручной ввод данных карты на терминале</comment>
                             <bit n="6">Разрешен FallBack</bit>
+                            <comment>Установите флаг, если необходимо провести FallBack (при невозможности считать чип, терминал проведет операцию по магнитной полосе). В данный момент такие операции не приветствуется платежными системами, а риск по этим операциям ложится на эквайра или эмитента todo</comment>
                             <!--<bit n="5">Игнорировать ICC сервисный код</bit>-->
                         </byte>
                         <byte n="1" label="Безопасность">
                             <bit n="7">Проверка последних 4 символов PAN</bit>
+                            <comment>Установите флаг, если необходимо чтобы на экране терминала, при взаимодействии с картой, отображалось предложение ввести последние 4 цифры карты (аналог ввода PIN-кода)</comment>
                             <bit n="6">Запрос CVC2 кода</bit>
+                            <comment>todo</comment>
                             <bit n="5">Запрос срока действия карты</bit>
                             <bit n="4">Поддержка Pin ByPass</bit>
                             <bit n="3">Обработка сервисного кода</bit>
@@ -2099,6 +2282,7 @@
                     </bitmap>
                 </column>
                 <column name="DefaultAccType" caption="Тип счета">
+                    <comment>Выберите тип счета для платежной системы</comment>
                     <integer required="true">
                         <enum>
                             <value value="-1" label="Выбор на терминале"/>
@@ -2113,15 +2297,17 @@
                     </integer>
                 </column>
                 <column name="IssPhoneNumber" caption="Телефонный номер банка">
+                    <comment>Укажите телефонный номер банка</comment>
                     <ascii min="1" max="20">
                     </ascii>
                 </column>
                 <column name="PrintCardData" caption="Настройки печати">
-                    <comment>Настройки печати данных карты на чеке.</comment>
+                    <comment>Настройки печати данных карты на чеке. Поле ссылается на справочник "Печать данных карты"</comment>
                     <link table="PrintCardDataSettings">
                     </link>
                 </column>
                 <column name="isDccSupported" caption="Поддерживается динамическая конвертация валют">
+                    <comment>Установите флаг, если необходимо чтобы для карточного продукта поддерживалась технология конвертации валют</comment>
                     <bit>
                         <default>false</default>
                     </bit>
@@ -2140,7 +2326,7 @@
                 </group>-->
                 <group caption="Комиссии/Скидки">
                      <column name="CommissionDiscountTransaction" caption="Транзакции с использованием комиссий/скидок">
-                        <comment></comment>
+                        <comment>Установите флаг(-и) для операций, к которым будут применяться комисси, скидки</comment>
                         <bitmap bytes="1">
                             <byte n="0" label="Операции">
                                 <bit n="7">Комиссия для операции Наличные</bit>
@@ -2204,12 +2390,15 @@
                         </link>
                 </column>-->
                 <group caption="Настройки получения OTP">
+                    <comment>Настройки получения одноразового пароля</comment>
                     <column name="isOTPReqForQR" caption="Запрашивать OTP, если данные карты получены из QR">
+                        <comment>Установите флаг, если необходимо чтобы пользователь вводил в терминал одноразовый пароль из смс после того, как отсканировал QR-код для проведения транзакции</comment>
                         <bit>
                             <default>false</default>
                         </bit>
                     </column>
                     <column name="isOTPReqForManual" caption="Запрашивать OTP, если данные карты введены вручную">
+                        <comment>Установите флаг, если необходимо чтобы пользователь вводил в терминал одноразовый пароль из смс после ручного ввода данных карты</comment>
                         <bit>
                             <default>false</default>
                         </bit>
@@ -2219,26 +2408,30 @@
         </table>
 
         <table name="BINRange" caption="Диапазоны PAN" itemCaption="Диапазон PAN" root="true" branched="false" tagged="true">
-            <comment>Справочник с диапазонами номеров карт.</comment>
+            <comment>Справочник с диапазонами номеров карт</comment>
             <rowName template="{0}">
                 <local column="RangeName"/>
             </rowName>
             <items>
                 <column name="RangeName" caption="Название диапазона" unique="true">
+                    <comment>Введите название диапазона номера карты</comment>
                     <ascii required="true" min="1" max="50">
                     </ascii>
                 </column>
                 <column name="PANLen" caption="Длина диапазона">
+                    <comment>По умолчанию длина диапазона номера карты соответствует "16" символам. При необходимости укажите другое значение. Поле имеет ограничение в 19 символов</comment>
                     <integer min="1" max="19">
                         <default>16</default>
                     </integer>
                 </column>
                 <column name="RangeLow" caption="Нижняя граница диапазона">
+                    <comment>Минимальное значение диапазона</comment>
                     <ascii min="1" max="19">
                         <default>0000000000000000000</default>
                     </ascii>
                 </column>
                 <column name="RangeHigh" caption="Верхняя граница диапазона">
+                    <comment>Максимальное значение диапазона</comment>
                     <ascii min="1" max="19">
                         <default>9999999999999999999</default>
                     </ascii>
@@ -2248,7 +2441,7 @@
 
         <table name="EMVApplication" caption="EMV приложения" itemCaption="EMV приложение" root="true"
                branched="false" tagged="true">
-            <comment>Справочник таблиц с описанием контактных и бесконтактных EMV приложений.</comment>
+            <comment>Справочник таблиц с описанием контактных и бесконтактных EMV приложений</comment>
             <rowName template="{0}">
                 <local column="AppLabel"/>
             </rowName>
@@ -2263,17 +2456,19 @@
                     </dynamic>
                 </column>-->
                 <column name="AppOrderNumber" caption="Номер элемента">
+                    <comment>Укажите номер элемента нового EMV приложения</comment>
                     <hex required="true" bytes="1">
                     </hex>
                 </column>
                  <!-- packForTerminal="true" file="APPS.TLV" container="FF01" tag="50" -->
                 <column name="AppLabel" caption="Ярлык приложения" unique="true">
-                    <comment>Application Label</comment>
+                    <comment>Application Label todo</comment>
                     <ascii required="true" min="1" max="20">
                         <mask>[A-Za-z \d]+</mask>
                     </ascii>
                 </column>
                 <column name="AppPaymentSys" caption="Платежная система">
+                    <comment>Из списка выберите платежную систему для EMV приложения</comment>
                     <integer required="true">
                         <enum>
                             <value value="0" label="Unknown"/>
@@ -2289,24 +2484,26 @@
                     </integer>
                 </column>
                 <column name="AIDLength" caption="Длина идентификатора приложения (AID)">
+                    <comment>todo</comment>
                     <integer min="5" max="20">
                     </integer>
                 </column>
                 <!-- packForTerminal="true" file="APPS.TLV" container="FF01" tag="9F06" -->
                 <column name="AID" caption="Идентификатор приложения (AID)">
-                    <comment>Идентификатор определяющий приложение согласно ISO/IEC 7816-5. (TAG 9F06)</comment>
+                    <comment>Идентификатор, определяющий приложение согласно ISO/IEC 7816-5 (TAG 9F06)</comment>
                     <hex bytes="16">
                     </hex>
                 </column>
                 <!-- packForTerminal="true" file="APPS.TLV" container="FF01" tag="9F09" -->
                 <column name="APPVer" caption="Версия приложения">
-                    <comment>Номер версии, присвоенный платежной системой для ядра приложения, работа с которой поддерживается на терминале. (TAG 9F06) </comment>
+                    <comment>Номер версии, присвоенный платежной системой для ядра приложения, работа с которой поддерживается на терминале (TAG 9F06) todo</comment>
                     <hex bytes="2">
                     </hex>
                 </column>
                 <!-- я не уверена что этот параметр нужен. Судя по файлу он шлется, но вообще он должен получаться с карты-->
                 <!-- packForTerminal="true" file="APPS.TLV" container="FF01" tag="87" -->
                 <column name="API" caption="Application Priority Indicator">
+                    <comment>todo</comment>
                     <hex bytes="1">
                     </hex>
                 </column>
@@ -2317,43 +2514,45 @@
                         </integer>
                 </column>-->
                 <column name="TACTab" caption="Terminal Action Codes">
-                    <comment>Ссылка на таблицу Terminal Action Codes</comment>
+                    <comment>Из списка выберите ранее созданный профиль или создайте новый профиль справочника "Terminal Action Codes". Поле ссылается на справочник "Terminal Action Codes"</comment>
                     <link table="TAC">
                     </link>
                 </column>
                 <column name="TDOLLength" caption="TDOL длина">
+                    <comment>todo</comment>
                     <integer min="0" max="255">
                         <default>3</default>
                     </integer>
                 </column>
                 <column name="TDOL" caption="Default TDOL">
-                    <comment>Default Transaction Certificate Data Object List. Если на карте отсутствует список объектов данных (тэг и длина), которые должны использоваться для расчета криптограммы, будут использованы данные из этого поля.</comment>
+                    <comment>"Default Transaction Certificate Data Object List" или "Список объектов данных сертификата транзакции по умолчанию". Если на карте отсутствует список объектов данных (тэг и длина), которые должны использоваться для расчета криптограммы, то будут использоваться данные из этого поля</comment>
                     <!--Нужно ограничение, как минимум на тип вводимых данных(HEX)-->
                     <clob>
                         <default>9F0206</default>
                     </clob>
                 </column>
                 <column name="DDOLLength" caption="DDOL длина">
+                    <comment>todo</comment>
                     <integer min="0" max="255">
                         <default>3</default>
                     </integer>
                 </column>
                 <column name="DDOL" caption="Default DDOL">
-                    <comment>Default Dynamic Data Authentication Data Object List. Если на карте отсутствует список объектов данных (тэг и длина), которые должны использоваться для динамической аутентификации, будут использованы данные из этого поля.</comment>
+                    <comment>"Default Dynamic Data Authentication Data Object List" или "Список объектов данных проверки подлинности динамических данных по умолчанию". Если на карте отсутствует список объектов данных (тэг и длина), которые должны использоваться для динамической аутентификации, то будут использоваться данные из этого поля</comment>
                     <!--Нужно ограничение, как минимум на тип вводимых данных(HEX)-->
                     <clob>
                         <default>9F3704</default>
                     </clob>
                 </column>
                 <column name="exactMatch" caption="Полное совпадение с AID карты">
-                    <comment>Флаг устанавливается, если для данного приложения поддерживается только полное совпадение с AID карты.</comment>
+                    <comment>AID - "Application Identifier" или "Идентификатор приложения". Установите флаг, если необходимо чтобы для данного приложения поддерживалось полное совпадение с идентификатором приложения карты</comment>
                     <bit>
                         <default>false</default>
                     </bit>
                 </column>
                 <column name="TermRiskMD" caption="Terminal Risk Management data">
                     <condition>{AppPaymentSys} == 2</condition>
-                    <comment>Специфичное для приложения значение. Задается для приложения Master Card (TAG 9F1D)</comment>
+                    <comment>Специфичное значение для приложения. Задается для приложения Master Card (TAG 9F1D)</comment>
                     <bitmap bytes="8">
                         <byte n="7" label="Contactless CVM">
                             <bit n="6">Enciphered PIN verified online</bit>
@@ -2378,11 +2577,11 @@
                     </bitmap>
                 </column>
                 <column name="AdditionalAppProcOptions" caption="Дополнительные настройки обработки приложения">
-                <comment>b8 - Реализации EMV ядра должна поддерживать механизм PIN bypass (для транзакций по контактным картам)
+                <comment>b8 - Реализации EMV ядра должна поддерживать механизм PIN bypass (для транзакций по контактным картам) 
 b6, b7 - При проведении операции будет отключен блок проверок полной EMV обработки, включающий: CVM, анализ рисков и проверку ограничений</comment>
                     <bitmap bytes="1">
                         <byte n="0" label="Дополнительные настройки">
-                            <bit n="7">b8 - Разрешать выполнение операций при отказе клиента вводить ПИН код</bit>
+                            <bit n="7">b8 - Разрешать выполнение операций при отказе клиента вводить ПИН-код</bit>
                             <bit n="6">b7 - Отключить проверку CVM для операции "Запрос баланса"</bit>
                             <bit n="5">b6 - Отключить проверку CVM для операции "Возврат"</bit>
                             <bit n="4">b5 - Разрешить обработку устаревших карт</bit>
@@ -2391,28 +2590,28 @@ b6, b7 - При проведении операции будет отключе�
                     </bitmap>
                 </column>
                 <column name="AppExpDateThreshold" caption="Пороговая дата устаревания приложения (YYMMDD)">
-                <comment>Пример: пороговая дата 1 февраля 2022 года должна быть записана следующим образом - "220201"</comment>
+                <comment>Укажите дату в виде строки формата YYMMDD. Например, пороговая дата 1 февраля 2022 года будет записана как строка «220201». Если у карты истек срок действия позже заданного срока, то карта будет работать дальше даже с истекшим сроком действия. Если у карты истек срок действия раньше заданного срока, то карта будет нерабочей</comment>
                     <hex bytes="3">
                     </hex>
                 </column>
-                <group caption="Настройки случайного выбора транзакции для онлайн обработки (Random Transaction Selection).">
+                <group caption="Настройки случайного выбора транзакции для онлайн-обработки ("Random Transaction Selection")">
                     <!-- packForTerminal="true" file="APPS.TLV" container="FF01" tag="DF8020" -->
                     <column name="Threshold" caption="Threshold">
-                        <comment>Пороговая сумма используемая в логике выбора транзакции для онлайновой обработки. </comment>
+                        <comment>"Предел допустимого уровня". Введите пороговую сумму, используемую в логике выбора транзакции для онлайн-обработки</comment>
                         <integer min="0" max="99999999">
                             <default>0</default>
                         </integer>
                     </column>
                     <!-- packForTerminal="true" file="APPS.TLV" container="FF01" tag="DF8021" -->
                     <column name="MaxTrgPercent" caption="MAX Target Percentage">
-                        <comment>Максимальное значение вероятности того, что транзакция будет выбрана для онлайн обработки.</comment>
+                        <comment>"Максимальный целевой процент". Укажите максимальное значение вероятности выбора транзакции, которая будет использована для онлайн-обработки</comment>
                         <integer min="0" max="99">
                             <default>0</default>
                         </integer>
                     </column>
                     <!-- packForTerminal="true" file="APPS.TLV" container="FF01" tag="DF8022" -->
                     <column name="TrgPercent" caption="Target Percentage">
-                        <comment>Базовое значение вероятности того, что транзакция будет выбрана для онлайн обработки..</comment>
+                        <comment>"Целевой процент". Базовое значение вероятности транзакции, которая будет выбрана для онлайн-обработки</comment>
                         <integer min="0" max="99">
                             <default>0</default>
                         </integer>
@@ -2420,13 +2619,13 @@ b6, b7 - При проведении операции будет отключе�
                 </group>
                 <group caption="Настройки бесконтактного приложения">
                     <column name="useCTLS" caption="Бесконтактное приложение">
-                        <comment>Флаг устанавливается, если приложение должно использоваться так же и как бесконтактное.</comment>
+                        <comment>Установите флаг, если необходимо чтобы приложение использовалось как бесконтактное todo</comment>
                         <bit>
                             <default>false</default>
                         </bit>
                     </column>
                     <column name="CTLSTACTab" caption="Contactless Terminal Action Codes">
-                        <comment>Ссылка на таблицу Terminal Action Codes</comment>
+                        <comment>"Коды действия бесконтактного терминала". Поле ссылается на справочник "Terminal Action Codes" todo</comment>
                         <link table="TAC">
                         </link>
                     </column>
@@ -3054,7 +3253,7 @@ b6, b7 - При проведении операции будет отключе�
             </items>
         </table>-->
 
-        <table name="SW_Update_Schedule" caption="Расписания обновлений" itemCaption="Расписание обновление ПО" root="true" branched="false" tagged="false">
+        <table name="SW_Update_Schedule" caption="Расписания обновлений" itemCaption="Расписание обновления ПО" root="true" branched="false" tagged="false">
             <comment>Справочник настроек разрешенного диапазона обновлений ПО</comment>
             <rowName template="{0}">
                 <local column="Name"/>

@@ -2635,14 +2635,14 @@ b6, b7 - При проведении операции будет отключе�
                     </column>-->
                     <column name="TTQ" caption="TTQ">
                         <condition>({AppPaymentSys} == 3) || ({AppPaymentSys} == 6) </condition>
-                        <comment>Terminal Transaction Qualifiers. Определяет возможности считывателя, требования и предпочтения к карте. Задается для бесконтактных приложений VISA и Union PAY. (TAG 9F66)</comment>
+                        <comment>"Terminal Transaction Qualifiers" или "Спецификаторы терминальных транзакций". Параметр определяет возможности считывателя, требования и предпочтения к карте. Задается для бесконтактных приложений VISA и Union PAY (TAG 9F66)</comment>
                         <hex bytes="4">
                         </hex>
                     </column>
                 <!-- packForTerminal="true" file="APPS.TLV" container="FF01" tag="9F1D" -->
                     <column name="TermRiskMDVisa" caption="Terminal Risk Management data">
                         <condition>{AppPaymentSys} == 3</condition>
-                        <comment>Специфичное для приложения значение. Задается для бесконтактного приложения VISA (TAG 9F1D)</comment>
+                        <comment>Специфичное значение для приложения. Задается для бесконтактного приложения VISA (TAG 9F1D)</comment>
                         <bitmap bytes="1">
                             <byte n="0" label="Tag 9F1D data">
                                 <bit n="7"> b8: Status Check (VCPS,v2.2,Req 5.31). 0-check is disabled, 1-check is enabled</bit>
@@ -2657,7 +2657,7 @@ b6, b7 - При проведении операции будет отключе�
                     </column>
                     <column name="TTPMCap" caption="Terminal TPM Capabilities">
                         <condition>{AppPaymentSys} == 7</condition>
-                        <comment>Настройки поддерживаемых терминалом режимов выполнения операций. Задается для бесконтактного приложения МИР (TAG DF55).</comment>
+                        <comment>Настройки режимов выполнения операций, поддерживаемых терминалом. Поле предназначено для бесконтактного приложения МИР (TAG DF55) todo</comment>
                         <bitmap bytes="2">
                             <byte n="0" label="byte 2">
                                 <bit n="7">Terminal unable to go online</bit>
@@ -2676,7 +2676,7 @@ b6, b7 - При проведении операции будет отключе�
                     </column>
                     <column name="DataExcTagList" caption="Data Exchange Tag List">
                         <condition>{AppPaymentSys} == 7</condition>
-                        <comment>Список тэгов для функционала Data Exchange. Задается для бесконтактного приложения МИР.(FF04)</comment>
+                        <comment>Список тэгов для функционала Data Exchange. Задается для бесконтактного приложения МИР (FF04)</comment>
                         <clob/>
                     </column>
                     <column name="TranRecoveryLimit" caption="Transaction Recovery Limit">
@@ -2687,7 +2687,7 @@ b6, b7 - При проведении операции будет отключе�
                     </column>
                     <column name="CTLSReaderCap" caption="Contactless Reader Capabilities">
                         <condition>{AppPaymentSys} == 4</condition>
-                        <comment>Задается для карт ExpressPay(AMEX contactless) (TAG 9F6D)</comment>
+                        <comment>Параметр задается для карт ExpressPay (AMEX contactless) (TAG 9F6D)</comment>
                         <integer>
                             <enum>
                                 <value value="0" label="Deprecated (ExpressPay 1.0)"/>
@@ -2706,7 +2706,7 @@ b6, b7 - При проведении операции будет отключе�
                     </column>
                     <column name="ECTLSReaderCap" caption="Enhanced Contactless Reader Capabilities">
                         <condition>{AppPaymentSys} == 4</condition>
-                        <comment>Задается для карт (AMEX contactless) (TAG 9F6E).</comment>
+                        <comment>Параметр задается для карт (AMEX contactless) (TAG 9F6E) todo</comment>
                         <bitmap bytes="4">
                             <byte n="3" label="Byte 1">
                                 <bit n="7">AEIPS contact mode supported</bit>
@@ -2743,7 +2743,7 @@ b6, b7 - При проведении операции будет отключе�
                     </column>
                     <column name="CTLSKernelConfigMasterCard" caption="Contactless Kernel Configuration">
                     <condition>{AppPaymentSys} == 2</condition>
-                    <comment>Задается для приложения Master Card (TAG DF811B)</comment>
+                    <comment>Значение задается для приложения Master Card (TAG DF811B)</comment>
                         <bitmap bytes="1">
                             <byte n="0" label="Contactless CVM">
                                 <bit n="7"> 8 - Реализации EMV ядра запрещена поддержка бесконтактных транзакций в режиме эмуляции магнитной полосы</bit>
@@ -2765,64 +2765,92 @@ b6, b7 - При проведении операции будет отключе�
         <!-- т.е данные должны слаться, но как минимум в файле APPS.TLV (т.е индивидуальные для каждого приложения)-->
         <table name="TAC" caption="Terminal Action Codes" itemCaption="TAC" root="true" branched="false"
                tagged="true">
-            <comment>Справочник Terminal Action Codes. Настраиваются для каждого EMV приложения.</comment>
+            <comment>Справочник "Terminal Action Codes" нужно настраивать для каждого EMV приложения</comment>
             <rowName template="{0}">
                 <local column="IccName"/>
             </rowName>
             <items>
                 <column name="IccName" caption="Название таблицы">
+                    <comment>Введите название профиля справочника</comment>
                     <ascii min="1" max="50">
                     </ascii>
                 </column>
                 <!-- packForTerminal="true" file="APPS.TLV" container="FF01" tag="9F0D" -->
                 <column name="TACDef" caption="TAC default">
-                    <comment>Битовая маска определяющая условия отклонения транзакции при невозможности установки связи с хостом. </comment>
+                    <comment>Битовая маска, определяющая условия отклонения транзакции при невозможности установки связи с хостом</comment>
                     <bitmap bytes="5">
                             <byte n="4" label="Байт 1">
                                 <bit n="7">bit 8 - Offline data authentication was not performed</bit>
+                                 <comment>бит 8 – Не выполнилась офлайн-проверка подлинности данных</comment>
                                 <bit n="6">bit 7 - SDA failed</bit>
+                                <comment>бит 7 – сбой SDA</comment>
                                 <bit n="5">bit 6 - ICC data missing</bit>
+                                <comment>бит 6 – Отсутствуют данные ICC</comment>
                                 <bit n="4">bit 5 - Card appears on terminal exception file</bit>
+                                <comment>бит 5 – Карта появляется в файле исключений терминала</comment>
                                 <bit n="3">bit 4 - DDA failed</bit>
+                                <comment>бит 4 – сбой DDA</comment>
                                 <bit n="2">bit 3 - CDA failed</bit>
+                                <comment>бит 3 – Сбой CDA</comment>
                             </byte>
                             <byte n="3" label="Байт 2">
                                 <bit n="7">bit 8 - ICC and terminal have different application versions</bit>
+                                <comment>бит 8 – у ICC и терминала разные версии приложений</comment>
                                 <bit n="6">bit 7 - Expired application</bit>
+                                <comment>бит 7 - Заявка с истекшим сроком действия</comment>
                                 <bit n="5">bit 6 - Application is not yet effective</bit>
+                                <comment>бит 6 - Заявка еще не вступила в силу</comment>
                                 <bit n="4">bit 5 - Requested service not allowed for card product</bit>
+                                <comment>бит 5 - Для карточного продукта не разрешена запрошенная услуга</comment>
                                 <bit n="3">bit 4 - New card</bit>
+                                <comment>бит 4 - Новая карта</comment>
                             </byte>
                             <byte n="2" label="Байт 3">
                                 <bit n="7">bit 8 - Cardholder verification was not successful</bit>
+                                <comment></comment>
                                 <bit n="6">bit 7 - Unrecognised CVM</bit>
+                                <comment>бит 7 – Непризнанный CVM</comment>
                                 <bit n="5">bit 6 - PIN Try Limit exceeded</bit>
+                                <comment>бит 6 – Превышен лимит попыток ввода PIN-кода</comment>
                                 <bit n="4">bit 5 - PIN entry required and PIN pad not present or not working</bit>
+                                <comment>бит 5 – Требуется ввод PIN-кода, а PIN-код отсутствует или не работает</comment>
                                 <bit n="3">bit 4 - PIN entry required, PIN pad present, but PIN was not entered</bit>
+                                <comment>бит 4 – Требуется ввод PIN-кода, PIN-код присутствует, но PIN-код не был введен</comment>
                                 <bit n="2">bit 3 - Online PIN entered</bit>
+                                <comment>бит 3 – Введенный онлайн-PIN-код</comment>
                             </byte>
                             <byte n="1" label="Байт 4">
                                 <bit n="7">bit 8 - Transaction exceeds floor limit</bit>
+                                <comment>бит 8 – Транзакция превышает минимальный лимит</comment>
                                 <bit n="6">bit 7 - Lower consecutive offline limit exceeded</bit>
+                                <comment>бит 7 – Превышен нижний последовательный лимит автономного режима</comment>
                                 <bit n="5">bit 6 - Upper consecutive offline limit exceeded</bit>
+                                <comment>бит 6 – Превышен верхний последовательный лимит автономного режима</comment>
                                 <bit n="4">bit 5 - Transaction selected randomly for online processing</bit>
+                                <comment>бит 5 – Транзакция выбирается случайным образом для онлайн-обработки</comment>
                                 <bit n="3">bit 4 - Merchant forced transaction online</bit>
+                                <comment>бит 4 – Продавец провел онлайн-транзакцию</comment>
                             </byte>
                             <byte n="0" label="Байт 5">
                                 <bit n="7">bit 8 - Default TDOL used</bit>
+                                <comment></comment>
                                 <bit n="6">bit 7 - Issuer authentication failed</bit>
+                                <comment></comment>
                                 <bit n="5">bit 6 - Script processing failed before final GENERATE AC</bit>
+                                <comment></comment>
                                 <bit n="4">bit 5 - Script processing failed after final GENERATE AC</bit>
+                                <comment></comment>
                             </byte>
                             <default>0000000000000000000000000000000000000000</default>
                         </bitmap>
                     </column>
                     <!-- packForTerminal="true" file="MAIN.TLV" tag="9F0E" -->
                     <column name="TACDec" caption="TAC decline">
-                        <comment>Битовая маска определяющая условия отклонения транзакции до похода на хост.</comment>
+                        <comment>Битовая маска, определяющая условия отклонения транзакции до отправки на хост</comment>
                         <bitmap bytes="5">
                             <byte n="4" label="Байт 1">
                                 <bit n="7">bit 8 - Offline data authentication was not performed</bit>
+                                <comment>todo</comment>
                                 <bit n="6">bit 7 - SDA failed</bit>
                                 <bit n="5">bit 6 - ICC data missing</bit>
                                 <bit n="4">bit 5 - Card appears on terminal exception file</bit>
@@ -2862,10 +2890,11 @@ b6, b7 - При проведении операции будет отключе�
                     </column>
                     <!-- packForTerminal="true" file="MAIN.TLV" tag="9F0F" -->
                     <column name="TACOnl" caption="TAC online">
-                        <comment>Битовая маска определяющая условия при которых транзакция должна идти ONLINE.</comment>
+                        <comment>Битовая маска, определяющая условия, при которых будут происходить онлайн–транзакции</comment>
                         <bitmap bytes="5">
                             <byte n="4" label="Байт 1">
                                 <bit n="7">bit 8 - Offline data authentication was not performed</bit>
+                                <comment>todo</comment>
                                 <bit n="6">bit 7 - SDA failed</bit>
                                 <bit n="5">bit 6 - ICC data missing</bit>
                                 <bit n="4">bit 5 - Card appears on terminal exception file</bit>
@@ -4174,7 +4203,7 @@ b6, b7 - При проведении операции будет отключе�
             </items>
         </table>
         <table name="DccCurrenciesCollection" caption="Валюты для динамической конвертации" itemCaption="Валюта для динамической конвертации" tagged="true" root="true">
-        <comment></comment>
+        <comment>todo</comment>
             <rowName template="{0}">
                 <local column="CollectionName"/>
             </rowName>
@@ -4183,27 +4212,31 @@ b6, b7 - При проведении операции будет отключе�
             </tableLinks>
             <items>
                 <column name="CollectionName" caption="Название коллекции" unique="true">
+                	<comment>Введите название коллекции валют todo</comment>
                     <ascii required="true" min="1" max="50">
                     </ascii>
                 </column>
             </items>
         </table>
         <table name="ServiceSettings" caption="Настройки сервисов" itemCaption="Настройки сервиса" tagged="true" root="true">
-        <comment></comment>
+        <comment>todo</comment>
             <rowName template="{0}">
                 <local column="ServiceName"/>
             </rowName>
             <items>
                 <column name="ServiceName" caption="Название сервиса" unique="true">
+                	<comment>Введите название сервиса</comment>
                     <ascii required="true" min="1" max="50">
                     </ascii>
                 </column>
                 <column name="ServiceId" caption="Id сервиса">
+                	<comment>Введите идентификатор сервиса. Идентификатор содержит 3 символа</comment>
                     <ascii required="true" min="3" max="3">
                         <mask>\d+</mask>
                     </ascii>
                 </column>
                 <column name="NII" caption="NII">
+                	<comment>todo</comment>
                     <ascii required="true" min="3" max="3">
                         <mask>\d+</mask>
                     </ascii>
@@ -4220,6 +4253,7 @@ b6, b7 - При проведении операции будет отключе�
             </tableLinks>
             <items>
                 <column name="CollectionName" caption="Название коллекции">
+                	<comment>Введите название коллекции todo</comment>
                     <ascii required="true" min="1" max="50">
                     </ascii>
                 </column>
